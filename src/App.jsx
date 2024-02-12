@@ -31,7 +31,7 @@ export default function App() {
 
   useEffect(() => {
     fetch(RANDOM_QUOTE, {
-      headers: { "X-Api-Key": process.env.REACT_APP_API_KEY },
+      headers: { "X-Api-Key": import.meta.env.VITE_APP_API_KEY },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -51,7 +51,7 @@ export default function App() {
         setQuote(quoteItem);
       });
   }, [newQuote]);
-  console.log(color);
+
   return (
     <div className="body" style={{ backgroundColor: color, color }}>
       <div className="App" id="wrapper">
